@@ -1,0 +1,49 @@
+
+h1{
+    text-align: center;
+}
+
+.sort {
+    display: flex;  /*通過將容器的 display 屬性設置為 flex，彈性容器變得靈活*/
+    justify-content: center; /* 水平對齊，置中 */
+    flex-wrap: wrap; /* 指定彈性項目是否應該換行，允許換行 */
+}
+
+.container {
+    position: relative;  /* 將元素設置為相對定位 */
+    width: 170px;
+    height: 250px;
+    margin: 3px;
+}
+
+.exam-img {
+    width: 100%;
+    height: 100%;
+}
+
+.img-background {
+    position: absolute;  /* 將元素設置為絕對定位 */
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /*top: 0; bottom: 0; left: 0; right: 0;:
+    將元素的上、下、左、右四個邊都設置為距離其最近的已定位祖先元素的相應邊的距離為 0，
+    這樣該元素就會充滿其父容器，即使父容器的尺寸發生變化，該元素也會保持充滿整個父容器。*/
+
+    height: 100%;
+    width: 100%; /*將元素的高度和寬度設置為其父容器的 100%，使其充滿整個父容器。*/
+    opacity: 0;  /*這個屬性的值可以是介於 0 到 1 之間的數字，其中 0 表示完全透明，1 表示完全不透明。*/
+
+    transition: 0.5s ease-in-out;
+    /*設置透明度過渡效果，當透明度發生改變時，
+    將在 0.5 秒內以 ease-in-out 的速度進行平滑過渡，從而呈現出漸變的效果。*/
+
+    background-color: rgba(57,57,57,0.5);  /*題目要求*/
+}
+
+/*它用於選擇當"滑鼠"懸停在具有 .container 類的元素上時，其內部的具有.img-background類的元素樣式將被應用。*/
+.container:hover .img-background {
+    opacity: 1;  /*這個屬性的值可以是介於 0 到 1 之間的數字，其中 0 表示完全透明，1 表示完全不透明。*/
+}
